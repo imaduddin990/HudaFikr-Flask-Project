@@ -5,4 +5,4 @@ HudaFikr is a Flask-based web application that suggests Quranic verses based on 
 Features
 Accepts emotions in both Malay and English
 Shows a Quranic verse and its interpretation based on the selected emotion
-Simple web interface powered by Flask
+Simple web interface powered by Flask.
