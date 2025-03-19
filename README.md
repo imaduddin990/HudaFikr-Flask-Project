@@ -63,13 +63,3 @@ sedih,sad,2,286,"Janganlah kamu bersedih, sesungguhnya Allah bersama kita.","Do 
 
 ## Contributions
 Contributions are welcome! If you'd like to improve this project, feel free to fork the repository and submit a pull request.
-
-## License
-This project is licensed under the MIT License.
-
-## Contact
-For any questions or suggestions, feel free to open an issue on GitHub or reach out to me.
-
----
-*HudaFikr - Helping you find guidance in the Quran based on your emotions.*
-
