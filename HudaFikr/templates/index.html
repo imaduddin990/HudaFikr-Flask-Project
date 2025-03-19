@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HudaFikr - Emotions & Guidance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>HudaFikr - Emotions & Guidance</h1>
+    <form method="post">
+        <label for="emotion">Masukkan emosi anda (BM/English):</label>
+        <input type="text" name="emotion" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if ayat_data %}
+        <div class="result">
+            <h3>Ayat yang dicadangkan:</h3>
+            <p><strong>Surah {{ ayat_data.surah }}:{{ ayat_data.ayat }}</strong></p>
+            {% if ayat_data.tafsiran_bm and ayat_data.tafsiran_bm != "None" %}
+                <p><strong>Tafsiran:</strong> {{ ayat_data.tafsiran_bm }}</p>
+            {% endif %}
+            {% if ayat_data.tafsiran_en and ayat_data.tafsiran_en != "None" %}
+                <p><strong>Interpretation:</strong> {{ ayat_data.tafsiran_en }}</p>
+            {% endif %}
+        </div>
+    {% else %}
+        {% if request.method == "POST" %}
+            <p>No matching verse found.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
