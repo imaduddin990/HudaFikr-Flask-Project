@@ -21,4 +21,5 @@ jobs:
             git fetch origin
             git reset --hard origin/main
             pkill -f app.py || true
-            nohup python3 app.py &
+            nohup python3 app.py > app.log 2>&1 &
+            sleep 2
