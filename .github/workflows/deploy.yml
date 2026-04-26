@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd HudaFikr-Flask-Project/HudaFikr
-            git pull
+            git fetch origin
+            git reset --hard origin/main
             pkill -f app.py || true
             nohup python3 app.py &
