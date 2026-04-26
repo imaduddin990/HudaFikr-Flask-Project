@@ -22,4 +22,4 @@ jobs:
             git reset --hard origin/main
             pkill -f app.py || true
             nohup python3 app.py > app.log 2>&1 < /dev/null &
-            sleep 2
+            exit 0
